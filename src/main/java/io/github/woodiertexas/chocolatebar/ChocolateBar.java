@@ -1,15 +1,22 @@
 package io.github.woodiertexas.chocolatebar;
 
+import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
+import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.FoodComponent;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.resource.ResourceManager;
+import net.minecraft.resource.pack.ResourcePackManager;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import net.minecraft.util.registry.Registry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.quiltmc.loader.api.ModContainer;
+import org.quiltmc.loader.api.QuiltLoader;
 import org.quiltmc.qsl.base.api.entrypoint.ModInitializer;
 import org.quiltmc.qsl.item.setting.api.QuiltItemSettings;
 
@@ -40,22 +47,34 @@ public class ChocolateBar implements ModInitializer {
 	@Override
 	public void onInitialize(ModContainer mod) {
 		LOGGER.info( "Hello Quilt world from ExampleMod v{}!", mod.metadata().version().raw() );
+
+		/*
+		Every block, item, entity, and biome must sign their registration papers.
+		All registration papers must be turned into the ModInitializer in the @Override Building
+
+		In all seriousness, the following code registers any item, block, entity, or biome added by the mod.
+		 */
+
+		Registry.register(Registry.ITEM, new Identifier("chocolatebar", "chocolate_bar"), CHOCOLATE_BAR);
+		Registry.register(Registry.ITEM, new Identifier("chocolatebar", "quilty_wrapping_paper"), QUILTY_WRAPPING_PAPER);
+		Registry.register(Registry.ITEM, new Identifier("chocolatebar", "toolchain_wrapping_paper"), TOOLCHAIN_WRAPPING_PAPER);
+
+		/*
+		This automatically loads up a datapack.
+		In this case it's a modified chocolate bar recipe if Create is present.
+		 */
+		if (FabricLoader.getInstance().isModLoaded("create")) {
+			ResourceManagerHelper.registerBuiltinResourcePack(
+					new Identifier("chocolatebar", "create_compat"),
+					FabricLoader.getInstance().getModContainer("chocolatebar").get(),
+					ResourcePackActivationType.DEFAULT_ENABLED);
+		}
+
+		/*if (QuiltLoader.isModLoaded("create")); {
+			ResourceManagerHelper.registerBuiltinResourcePack(
+					new Identifier("chocolatebar", "create_compat"),
+					QuiltLoader.getModContainer("chocolatebar").get(),
+					ResourcePackActivationType.DEFAULT_ENABLED);
+		}*/
 	}
-
-	/*
-	Every block, item, entity, and biome must sign their registration papers.
-	All registration papers must be turned into the ModInitializer in the @Override Building
-
-	In all seriousness, the following code registers any item, block, entity, or biome added by the mod.
-	 */
-
-
-	Registry.register(Registry.ITEM, new Identifier("chocolatebar", "chocolate_bar"), CHOCOLATE_BAR);
-	Registry.register(Registry.ITEM, new Identifier("chocolatebar", "quilty_wrapping_paper"), QUILTY_WRAPPING_PAPER);
-	Registry.register(Registry.ITEM, new Identifier("chocolatebar", "toolchain_wrapping_paper"), TOOLCHAIN_WRAPPING_PAPER);
-
-	/*
-	This automatically loads up a datapack.
-	In this case it's a modified chocolate bar recipe if Create is present.
-	 */
 }
