@@ -2,20 +2,20 @@
 	"schema_version": 1,
 	"quilt_loader": {
 		"group": "${maven_group}",
-		"id": "examplemod",
+		"id": "chocolatebar",
 		"version": "${version}",
 		"metadata": {
-			"name": "Mod Name",
-			"description": "A short description of your mod.",
+			"name": "Chocolate Bar",
+			"description": "A little mod that adds a chocolate bar to Minecraft.",
 			"contributors": {
-				"Me!": "Owner"
+				"Me!": "woodiertexas"
 			},
-			"icon": "assets/examplemod/icon.png"
+			"icon": "assets/chocolatebar/icon.png"
 		},
 		"intermediate_mappings": "net.fabricmc:intermediary",
 		"entrypoints": {
 			"init": [
-				"com.examplemod.ExampleMod"
+				"io.github.woodiertexas.chocolatebar.ChocolateBar"
 			]
 		},
 		"depends": [
@@ -33,9 +33,6 @@
 			}
 		]
 	},
-	"mixin": [
-		"examplemod.mixins.json"
-	],
 	"minecraft": {
 		"environment": "*"
 	}
