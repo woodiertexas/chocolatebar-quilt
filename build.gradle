@@ -58,7 +58,7 @@ java {
 
 jar {
 	from('LICENSE') {
-		rename { "$it_$archivesBaseName"}
+		rename { "$archivesBaseName"}
 	}
 }
 

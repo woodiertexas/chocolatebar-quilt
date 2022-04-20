@@ -63,12 +63,6 @@ public class ChocolateBar implements ModInitializer {
 		This automatically loads up a datapack.
 		In this case it's a modified chocolate bar recipe if Create is present.
 		 */
-		if (FabricLoader.getInstance().isModLoaded("create")) {
-			ResourceManagerHelper.registerBuiltinResourcePack(
-					new Identifier("chocolatebar", "create_compat"),
-					FabricLoader.getInstance().getModContainer("chocolatebar").get(),
-					ResourcePackActivationType.DEFAULT_ENABLED);
-		}
 
 		/*if (QuiltLoader.isModLoaded("create")); {
 			ResourceManagerHelper.registerBuiltinResourcePack(
