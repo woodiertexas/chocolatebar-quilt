@@ -1,15 +1,10 @@
 package io.github.woodiertexas.chocolatebar;
 
-import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
-import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
-import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.FoodComponent;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
-import net.minecraft.resource.ResourceManager;
-import net.minecraft.resource.pack.ResourcePackManager;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import net.minecraft.util.registry.Registry;
@@ -19,6 +14,7 @@ import org.quiltmc.loader.api.ModContainer;
 import org.quiltmc.loader.api.QuiltLoader;
 import org.quiltmc.qsl.base.api.entrypoint.ModInitializer;
 import org.quiltmc.qsl.item.setting.api.QuiltItemSettings;
+import org.quiltmc.qsl.resource.loader.api.ResourceLoader;
 
 public class ChocolateBar implements ModInitializer {
 	//Making a logger
@@ -64,11 +60,12 @@ public class ChocolateBar implements ModInitializer {
 		In this case it's a modified chocolate bar recipe if Create is present.
 		 */
 
-		/*if (QuiltLoader.isModLoaded("create")); {
-			ResourceManagerHelper.registerBuiltinResourcePack(
+		if (QuiltLoader.isModLoaded("create")); {
+			ResourceLoader.registerBuiltinResourcePack(
 					new Identifier("chocolatebar", "create_compat"),
 					QuiltLoader.getModContainer("chocolatebar").get(),
-					ResourcePackActivationType.DEFAULT_ENABLED);
-		}*/
+					org.quiltmc.qsl.resource.loader.api.ResourcePackActivationType.DEFAULT_ENABLED
+			);
+		}
 	}
 }

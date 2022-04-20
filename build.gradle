@@ -65,7 +65,7 @@ jar {
 publishing {
 	publications {
 		mavenJava(MavenPublication) {
-			group 'com.examplemod'
+			group 'io.github.woodiertexas.chocolatebar'
 			from components.java
 		}
 	}
