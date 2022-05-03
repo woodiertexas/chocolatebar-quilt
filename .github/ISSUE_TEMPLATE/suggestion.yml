@@ -11,10 +11,6 @@ body:
         Thanks for taking your time to create your suggestion! If you want to discuss your suggestion, join us on Discord.
         Make sure you are running the latest version of Chocolate Bar before making the suggestion.
   - type: textarea
-    id: suggestion-name
-    attributes:
-      label: What are you suggesting?
-  - type: textarea
     id: description
     attributes:
       label: Describe your suggestion in detail.
