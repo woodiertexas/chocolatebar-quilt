@@ -1,8 +1,9 @@
 {
   "type": "minecraft:crafting_shapeless",
+  "group": "food",
   "ingredients": [
     {
-      "item": "create:chocolate_bucket"
+      "item": "minecraft:dirt"
     },
     {
       "item": "minecraft:sugar"
