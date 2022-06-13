@@ -1,0 +1,22 @@
+name: Suggestion
+description: Suggest something for Chocolate Bar
+labels: [suggestion]
+body:
+  - type: markdown
+    attributes:
+      value: "## Welcome!"
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking your time to create your suggestion! If you want to discuss your suggestion, join us on Discord.
+        Make sure you are running the latest version of Chocolate Bar before making the suggestion.
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe your suggestion in detail.
+      description: "Describe the suggestion as clearly as possible. More info means the suggestion is more likely to be accepted."
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: "Add any other context about the block suggestion here."
