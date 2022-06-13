@@ -6,8 +6,6 @@
 name: build
 on:
   push:
-    paths-ignore:
-      - '.github/**'
 
 jobs:
   build:
