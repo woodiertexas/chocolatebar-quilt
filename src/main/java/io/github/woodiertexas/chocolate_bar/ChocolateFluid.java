@@ -35,6 +35,11 @@ public abstract class ChocolateFluid extends FlowableFluid {
 	}
 
 	@Override
+	public boolean matchesType(Fluid fluid) {
+		return fluid == getStill() || fluid == getFlowing();
+	}
+
+	@Override
 	protected boolean isInfinite(World world) {
 		return false;
 	}
@@ -71,11 +76,6 @@ public abstract class ChocolateFluid extends FlowableFluid {
 	}
 
 	@Override
-	public boolean isSource(FluidState state) {
-		return false;
-	}
-
-	@Override
 	public int getLevel(FluidState state) {
 		return 8;
 	}
@@ -96,7 +96,7 @@ public abstract class ChocolateFluid extends FlowableFluid {
 			return fluidState.get(LEVEL);
 		}
 
-		public boolean isStill(FluidState fluidState) {
+		public boolean isSource(FluidState fluidState) {
 			return false;
 		}
 	}
@@ -107,7 +107,8 @@ public abstract class ChocolateFluid extends FlowableFluid {
 			return 8;
 		}
 
-		public boolean isStill(FluidState fluidState) {
+		@Override
+		public boolean isSource(FluidState fluidState) {
 			return true;
 		}
 	}

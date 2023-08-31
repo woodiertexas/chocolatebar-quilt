@@ -21,7 +21,8 @@
 		},
 		"intermediate_mappings": "net.fabricmc:intermediary",
 		"entrypoints": {
-			"init": "io.github.woodiertexas.chocolate_bar.ChocolateBar"
+			"init": "io.github.woodiertexas.chocolate_bar.ChocolateBar",
+			"client_init": "io.github.woodiertexas.chocolate_bar.client.ChocolateBarClient"
 		},
 		"depends": [
 			{
