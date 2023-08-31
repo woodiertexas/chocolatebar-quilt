@@ -8,9 +8,14 @@
 			"name": "Chocolate Bar",
 			"description": "A little mod that adds a chocolate bar to Minecraft.",
 			"contributors": {
-				"woodiertexas": "Owner",
+				"woodiertexas": "Author",
 				"Crackers0106": "Mod Icon",
 				"Tubbo": "Chocolate Bar Texture"
+			},
+			"contact": {
+				"homepage": "https://modrinth.com/mod/chocolate-bar",
+				"issues": "https://github.com/woodiertexas/chocolate-bar-2/issues",
+				"sources": "https://github.com/woodiertexas/chocolate-bar-2"
 			},
 			"icon": "assets/chocolate_bar/icon.png"
 		},
@@ -21,15 +26,15 @@
 		"depends": [
 			{
 				"id": "quilt_loader",
-				"versions": ">=0.17.0-"
+				"versions": ">=0.20.0"
 			},
 			{
 				"id": "quilted_fabric_api",
-				"versions": ">=2.0.0-"
+				"versions": ">=7.0.0"
 			},
 			{
 				"id": "minecraft",
-				"versions": ">=1.19"
+				"versions": ">=1.20.1"
 			}
 		]
 	}
