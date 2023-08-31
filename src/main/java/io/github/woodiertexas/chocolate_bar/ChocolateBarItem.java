@@ -22,10 +22,10 @@ public class ChocolateBarItem extends Item {
      */
     @Override
     public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext options) {
-        // in '.styled()'; style is lamba'd to the 'style.withColor()' method to color the toolip.
+        //in '.styled()'; style is lamba'd to the 'style.withColor()' method to color the toolip.
         MutableText lore = Text.literal("Potato chocolate?").styled(style -> style.withColor(0xB79268));
 
-        // This just finalizes the tooltip adding. That's quite literally all this does.
+        //This just finalizes the tooltip adding. That's quite literally all this does.
         tooltip.add(lore);
     }
 
