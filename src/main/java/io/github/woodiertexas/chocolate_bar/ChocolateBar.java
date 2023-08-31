@@ -17,8 +17,7 @@ import org.quiltmc.qsl.item.setting.api.QuiltItemSettings;
 import org.quiltmc.qsl.resource.loader.api.ResourceLoader;
 
 public class ChocolateBar implements ModInitializer {
-    //Making a logger
-    public static final Logger LOGGER = LogManager.getLogger("ExampleMod");
+    public static final Logger LOGGER = LogManager.getLogger("Chocolate Bar");
 
     /*
     Creating items/blocks/etc and defining their properties
@@ -26,7 +25,6 @@ public class ChocolateBar implements ModInitializer {
     public static final Item QUILTY_WRAPPING_PAPER = new Item(new QuiltItemSettings().group(ItemGroup.MISC).rarity(Rarity.UNCOMMON));
     public static final Item TOOLCHAIN_WRAPPING_PAPER = new Item(new QuiltItemSettings().group(ItemGroup.MISC).rarity(Rarity.UNCOMMON));
 
-    //This code for a food item is so big it had to be put on multiple lines.
     public static final ChocolateBarItem CHOCOLATE_BAR = new ChocolateBarItem(
             new QuiltItemSettings()
                     .group(ItemGroup.FOOD).food(
