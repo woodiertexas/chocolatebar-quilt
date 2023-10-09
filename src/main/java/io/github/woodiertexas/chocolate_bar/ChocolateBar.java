@@ -73,16 +73,19 @@ public class ChocolateBar implements ModInitializer {
         Registry.register(Registries.ITEM, new Identifier(MODID, "chocolate_bar"), CHOCOLATE_BAR);
 		Registry.register(Registries.ITEM, new Identifier(MODID, "chocolate_bar_zoomies"), CHOCOLATE_BAR_ZOOMIES);
 
+		/*
 		STILL_CHOCOLATE = Registry.register(Registries.FLUID, new Identifier(MODID, "still_chocolate"), new ChocolateFluid.Still());
 		FLOWING_CHOCOLATE = Registry.register(Registries.FLUID, new Identifier(MODID, "flowing_chocolate"), new ChocolateFluid.Flowing());
 		CHOCOLATE_BUCKET = Registry.register(Registries.ITEM, new Identifier(MODID, "chocolate_bucket"),
 				new BucketItem(STILL_CHOCOLATE, new Item.Settings().recipeRemainder(Items.BUCKET).maxCount(1)));
 
+
 		CHOCOLATE = Registry.register(Registries.BLOCK, new Identifier(MODID, "chocolate"), new FluidBlock(STILL_CHOCOLATE, QuiltBlockSettings.copy(Blocks.WATER)){});
+		*/
 
 		ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINKS).register(entries -> entries.addItem(CHOCOLATE_BAR));
 		ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINKS).register(entries -> entries.addItem(CHOCOLATE_BAR_ZOOMIES));
-		ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINKS).register(entries -> entries.addItem(CHOCOLATE_BUCKET));
+		//ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINKS).register(entries -> entries.addItem(CHOCOLATE_BUCKET));
 
         // Registers the recipe for Chocolate Bar
         RecipeManagerHelper.registerStaticRecipe(
@@ -93,6 +96,17 @@ public class ChocolateBar implements ModInitializer {
                         .ingredient('S', Items.SUGAR)
                         .build(new Identifier(MODID, "chocolate_bar"), "")
         );
+
+		RecipeManagerHelper.registerStaticRecipe(
+			VanillaRecipeBuilders.shapedRecipe(
+				"CMS", " G ")
+				.output(new ItemStack(CHOCOLATE_BAR))
+				.ingredient('C', Items.COCOA_BEANS)
+				.ingredient('M', Items.MILK_BUCKET)
+				.ingredient('S', Items.SUGAR)
+				.ingredient('G', Items.GLOW_BERRIES)
+				.build(new Identifier(MODID, "chocolate_bar_zoomies"), "")
+		);
         LOGGER.info("Recipes are done generating. Have fun with Chocolate Bar! :)");
     }
 }
