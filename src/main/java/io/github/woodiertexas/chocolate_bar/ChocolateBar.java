@@ -1,15 +1,9 @@
 package io.github.woodiertexas.chocolate_bar;
 
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.FluidBlock;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.fluid.FlowableFluid;
-import net.minecraft.item.BucketItem;
 import net.minecraft.item.FoodComponent;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -20,7 +14,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.quiltmc.loader.api.ModContainer;
 import org.quiltmc.qsl.base.api.entrypoint.ModInitializer;
-import org.quiltmc.qsl.block.extensions.api.QuiltBlockSettings;
 import org.quiltmc.qsl.item.setting.api.QuiltItemSettings;
 import org.quiltmc.qsl.recipe.api.RecipeManagerHelper;
 import org.quiltmc.qsl.recipe.api.builder.VanillaRecipeBuilders;
@@ -28,11 +21,6 @@ import org.quiltmc.qsl.recipe.api.builder.VanillaRecipeBuilders;
 public class ChocolateBar implements ModInitializer {
     public static final Logger LOGGER = LogManager.getLogger("Chocolate Bar");
 	public static final String MODID = "chocolate_bar";
-
-	public static Block CHOCOLATE;
-	public static FlowableFluid STILL_CHOCOLATE;
-	public static FlowableFluid FLOWING_CHOCOLATE;
-	public static Item CHOCOLATE_BUCKET;
 
     // Creating items/blocks/etc and defining their properties
 	public static final ChocolateBarItem CHOCOLATE_BAR = new ChocolateBarItem(
