@@ -12,7 +12,9 @@ import org.quiltmc.qsl.block.extensions.api.client.BlockRenderLayerMap;
 public class ChocolateBarClient implements ClientModInitializer {
 	@Override
 	public void onInitializeClient(ModContainer mod) {
-		System.out.println("yeef");
+		//System.out.println("yeef");
+
+		/*
 		FluidRenderHandlerRegistry.INSTANCE.register(ChocolateBar.STILL_CHOCOLATE, ChocolateBar.FLOWING_CHOCOLATE, new SimpleFluidRenderHandler(
 				new Identifier("minecraft:block/water_still"),
 				new Identifier("minecraft:block/water_flow"),
@@ -20,5 +22,6 @@ public class ChocolateBarClient implements ClientModInitializer {
 		));
 
 		BlockRenderLayerMap.put(RenderLayer.getTranslucent(), ChocolateBar.STILL_CHOCOLATE, ChocolateBar.FLOWING_CHOCOLATE);
+		 */
 	}
 }
